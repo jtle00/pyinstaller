@@ -85,8 +85,8 @@ runs:
 
     - name: (Install) Package 
       # Added to install version control
-      run: |
-        pip install -e '.[gui]'
+      shell: bash
+      run: pip install -e '.[gui]'
 
     - name: (Install) pyinstaller
       shell: bash
