@@ -69,7 +69,7 @@ runs:
     
     - name: (Set) modified outputs
       id: mods
-      # shell: bash
+      shell: bash
       run: python "${{ github.action_path }}/src/mods.py"
       env:
         spec: ${{ inputs.spec }}
@@ -94,7 +94,7 @@ runs:
     #   run: pip install -e '.[gui]'
     
     - name: (Create) Executable
-      # shell: bash
+      shell: bash
       run: |
         pyinstaller \
           --clean \
@@ -125,14 +125,14 @@ runs:
     - name: If executable upload success
       id: exe_uploading
       if: steps.artifact_upload.conclusion == 'success'
-      # shell: bash
+      shell: bash
       run: |
         echo "✔️ Executable **_(${{ inputs.upload_exe_with_name }})_** uploaded successfully" >> $GITHUB_STEP_SUMMARY
         echo "uploaded='true'" >> $GITHUB_OUTPUT
     
     - name: If executable upload fails
       if: failure() && steps.artifact_upload.conclusion == 'failure'
-      # shell: bash
+      shell: bash
       run: |
         echo "::warning title=Failed-Upload::\
           Executable couldn't upload. \
