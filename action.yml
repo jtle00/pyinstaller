@@ -77,6 +77,8 @@ runs:
     
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+        clean: false
     
     - name: (Install) dependencies
       if: inputs.requirements != ''
@@ -87,9 +89,9 @@ runs:
       shell: bash
       run: pip install pyinstaller
 
-    - name: (Install) Package 
-      shell: bash
-      run: pip install -e '.[gui]'
+    # - name: (Install) Package 
+    #   shell: bash
+    #   run: pip install -e '.[gui]'
     
     - name: (Create) Executable
       shell: bash
