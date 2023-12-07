@@ -89,9 +89,11 @@ runs:
       shell: bash
       run: pip install pyinstaller
 
-    # - name: (Install) Package 
-    #   shell: bash
-    #   run: pip install -e '.[gui]'
+    # Added for Pymapmanager version control support
+    # Installing package to create version number prior to creating executable
+    - name: (Install) Package 
+      shell: bash
+      run: pip install -e '.[gui]'
     
     - name: (Create) Executable
       shell: bash
