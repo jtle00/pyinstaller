@@ -89,8 +89,8 @@ runs:
       shell: bash
       run: pip install pyinstaller
 
-    # Added for Pymapmanager version control support
-    # Installing package to create version number prior to creating executable
+    # Added for Sanpy version control support
+    # Installing package to create version number before creating executable
     - name: (Install) Package 
       shell: bash
       run: pip install -e '.[gui]'
